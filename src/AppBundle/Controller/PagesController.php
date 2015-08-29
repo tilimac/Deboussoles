@@ -12,14 +12,51 @@ class PagesController extends Controller {
      * @Template()
      */
     public function homeAction(){
+        $hikeManager = $this->get('hike.manager');
+        
+        return array(
+            'nextHike' => $hikeManager->getNextHike(),
+            'previousHikes' => $hikeManager->getPreviousHikes(6)
+        );
+    }
+    
+    /**
+     * @Route("/randonnees/precedentes/", name="_previous_hikes")
+     * @Template()
+     */
+    public function previousHikesAction(){
+        $hikeManager = $this->get('hike.manager');
+        
+        return array(
+            'previousHikes' => $hikeManager->getPreviousHikes()
+        );
+    }
+    
+    /**
+     * @Route("/randonnees/prochaines/", name="_next_hikes")
+     * @Template()
+     */
+    public function nextHikesAction(){
         return array();
     }
     
     /**
-     * @Route("/previousHikes", name="_previous_hikes")
+     * @Route("/randonnee/{id}/", name="_hike")
      * @Template()
      */
-    public function previousHikesAction(){
+    public function hikeAction($id){
+        $hikeManager = $this->get('hike.manager');
+        
+        return array(
+            'hike' => $hikeManager->getHike($id)
+        );
+    }
+    
+    /**
+     * @Route("/contact", name="_contact")
+     * @Template()
+     */
+    public function contactAction(){
         return array();
     }
 }
