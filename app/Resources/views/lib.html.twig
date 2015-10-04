@@ -2,9 +2,9 @@
 
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('bundles/app/lib/bootstrap/dist/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/lib/font-awesome/css/font-awesome.min.css') }}" />
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">-->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     {% stylesheets 
         'bundles/app/css/general.css' filter='cssrewrite' %}
         <link rel="stylesheet" href="{{ asset_url }}" />
@@ -12,8 +12,8 @@
 {% endblock %}
 
 {% block javascripts_header %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="{{ asset('bundles/app/lib/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('bundles/app/lib/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 {% endblock %}
 
 {% block javascripts %}
