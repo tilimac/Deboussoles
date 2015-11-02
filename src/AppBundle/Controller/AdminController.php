@@ -177,4 +177,16 @@ class AdminController extends Controller {
         
         return array('pagination' => $pagination);
     }
+    
+    /**
+     * @Route("/demandes/", name="_admin_requests")
+     * @Template()
+     */
+    public function requestsAction(){
+        $contactManager = $this->get('contact.manager');
+        
+        return array(
+            'contacts' => $contactManager->getAll()
+        );
+    }
 }

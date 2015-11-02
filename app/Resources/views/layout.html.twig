@@ -9,7 +9,7 @@
     {% endstylesheets %}
     <style>
         .navbar-fixed-bottom .navbar-collapse, .navbar-fixed-top .navbar-collapse {
-            max-height: 230px;
+            max-height: none;
         }
     </style>
 {% endblock %}
@@ -34,7 +34,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="404.html">Association</a>
+                        <a href="{{ path('_association') }}">Association</a>
                     </li>
                     <li>
                         <a href="{{ path('_previous_hikes') }}">Précédentes randonnées</a>

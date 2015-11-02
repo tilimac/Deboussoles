@@ -1,5 +1,6 @@
 parameters:
     hike_manager.class: AppBundle\Manager\HikeManager
+    contact_manager.class: AppBundle\Manager\ContactManager
 
 services:
     app_user.profile.form.type:
@@ -12,5 +13,8 @@ services:
             - { name: form.type, alias: app_user_registration }
     hike.manager:
         class:     "%hike_manager.class%"
+        arguments: ["@doctrine.orm.entity_manager"]
+    contact.manager:
+        class:     "%contact_manager.class%"
         arguments: ["@doctrine.orm.entity_manager"]
         

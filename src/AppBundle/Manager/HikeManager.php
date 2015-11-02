@@ -17,6 +17,10 @@ class HikeManager {
         $this->repository = $this->em->getRepository('AppBundle:Hike');
     }
     
+    public function getAll() {
+        return $this->repository->findAll();
+    }
+    
     public function getHike($id) {
         return $this->repository->find($id);
     }
